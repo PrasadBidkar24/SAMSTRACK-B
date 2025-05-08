@@ -23,7 +23,8 @@ import com.tka.sams.api.service.UserService;
 
 @RestController
 @RequestMapping("/attendance")
-@CrossOrigin("http://localhost:4200")
+//@CrossOrigin("http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "https://samstrack.netlify.app"})
 
 public class AttendanceController {
 

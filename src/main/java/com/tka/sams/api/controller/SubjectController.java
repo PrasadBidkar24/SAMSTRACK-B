@@ -19,7 +19,8 @@ import com.tka.sams.api.service.SubjectService;
 
 @RestController
 @RequestMapping("/subject")
-@CrossOrigin("http://localhost:4200")
+//@CrossOrigin("http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "https://samstrack.netlify.app"})
 public class SubjectController {
 
 	@Autowired
