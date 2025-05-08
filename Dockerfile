@@ -1,13 +1,13 @@
-# Use an official OpenJDK image as the base
+# Step 1: Use Maven to build the JAR
+FROM maven:3.9.6-eclipse-temurin-17 AS builder
+WORKDIR /app
+COPY . .
+RUN mvn clean package -DskipTests
+
+# Step 2: Use Java to run the built JAR
 FROM openjdk:17
+WORKDIR /app
+COPY --from=builder /app/target/*.jar app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
 
-# REMOVE or comment out this line — it's no longer allowed
-# VOLUME /tmp
-
-# Add your JAR file
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-
-# Run the app
-ENTRYPOINT ["java","-jar","/app.jar"]
 
