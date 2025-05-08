@@ -23,6 +23,8 @@ public class SecurityConfig {
                     "/user/get-all-user",
                     "/user/get-all-admin",
                     "/user/get-all-faculty",
+                    "/user/delete-user-by-username",
+                    "/user/update-user",
                     // SubjectController
                     "/subject/get-all-subjects",
                     "/subject/get-subject-by-id/**",
